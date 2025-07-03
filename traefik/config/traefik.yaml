@@ -11,6 +11,12 @@ api:
 entrypoints:
   web: 
     address: 80
+    # This redirections should only be used after config tls & https cert resolvers
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
   websecure:
     address: 443
 providers:
