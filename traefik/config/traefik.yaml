@@ -2,6 +2,8 @@ global:
   checkNewVersion: false
   sendAnonymousUsage: false
 log: 
+  # For testing propose use level debug, change this in production
+  # to no not having to much noising
   level: DEBUG
 api:
   dashboard: true
