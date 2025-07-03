@@ -2,6 +2,8 @@ global:
   checkNewVersion: false
   sendAnonymousUsage: false
 log: 
+  # For testing propose use level debug, change this in production
+  # to no not having to much noising
   level: DEBUG
 api:
   dashboard: true
@@ -11,3 +13,7 @@ entrypoints:
     address: 80
   websecure:
     address: 443
+providers:
+  docker:
+    endpoint: unix:///var/run/docker.sock
+    exposedByDefault: false
