@@ -21,6 +21,8 @@ services:
     networks:
       - traefik_proxy
     restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true # Helps to increase security
 networks:
   #The network should be created before running the container
   traefik_proxy:
