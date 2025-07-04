@@ -16,9 +16,13 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       # create traefik.yaml file inside config folder
       - ./config/traefik.yaml:/etc/traefik/traefik.yaml
+      # create directory data/certs  
+      - ./data/certs/:/var/traefik/certs/:rw
     networks:
       - traefik_proxy
     restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true # Helps to increase security
 networks:
   #The network should be created before running the container
   traefik_proxy:
